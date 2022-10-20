@@ -1,6 +1,6 @@
 module.exports = {
     root: {
-        apptitle: "AppLeApp",
+        apptitle: "FrApp",
         map: {
             LeApp1:{
                 title:"Cities of the world",

@@ -36,7 +36,8 @@
             "locator-store",
             "toc",
             "console",
-            "basemapchanger"
+            "basemapchanger",
+            "weather"
         ],
         "require": [
             "${app}.app"

@@ -1,10 +1,10 @@
 {
-    "name": "basemapchanger",
+    "name": "weather",
     "version": "1.0.0",
     "title": "${bundleName}",
     "description": "${bundleDescription}",
     "vendor": "con terra GmbH",
-    "productName": "mapapps-developer-workshop",
+    "productName": "frapp",
     "dependencies": {
         "esri": "^4.10.0",
         "apprt-vue": "^4.7.0",
@@ -14,7 +14,29 @@
     "i18n": [
         "bundle"
     ],
-    "layout-widgets": [],
+    "layout-widgets": [
+        {
+            "widgetRole": "weatherWidget",
+            "window": {
+                "title": "weatherWindow",
+                "marginBox": {
+                    "l": 50,
+                    "b": 150,
+                    "w": 300,
+                    "h": 200
+                }
+            }
+        }
+    ],
     "CSS-Themes-Extension": [],
-    "components": []
+    "components": [
+        {
+            "name": "weatherFactory",
+            "provides": "dijit.Widget",
+            "instanceFactory": true,
+            "properties": {
+                "widgetRole": "weatherWidget"
+            }
+        }
+    ]
 }

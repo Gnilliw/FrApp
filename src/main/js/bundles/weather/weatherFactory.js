@@ -1,9 +1,16 @@
-/*
 import Vue from "apprt-vue/Vue";
 import VueDijit from "apprt-vue/VueDijit";
 import weatherVue from "./weather.vue";
 
-let weatherVue = new Vue(weatherVue);
+export default class WeatherFactory {
+    constructor() {
+    }
+    activate() {
+    }
+    createInstance(){
+        const vm = new Vue(weatherVue);
+        const weatherWidget = VueDijit(vm);
+        return weatherWidget;
+    }
+}
 
-let weatherWidget = VueDijit(weatherVue);
-*/

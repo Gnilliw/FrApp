@@ -312,7 +312,8 @@
                             "tocToggleTool",
                             "printingToggleTool",
                             "sharelinkTool",
-                            "basemapChangerToggleTool"
+                            "basemapChangerToggleTool",
+                            "weatherToggleTool"
                         ],
                         "container": "map",
                         "position": {

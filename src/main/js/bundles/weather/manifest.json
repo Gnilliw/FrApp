@@ -1,8 +1,8 @@
 {
     "name": "weather",
     "version": "1.0.0",
-    "title": "${bundleName}",
-    "description": "${bundleDescription}",
+    "title": "TestTitel",
+    "description": "TestBeschreibung",
     "vendor": "con terra GmbH",
     "productName": "frapp",
     "dependencies": {
@@ -18,7 +18,7 @@
         {
             "widgetRole": "weatherWidget",
             "window": {
-                "title": "weatherWindow",
+                "title": "WeatherWindow",
                 "marginBox": {
                     "l": 50,
                     "b": 150,
@@ -32,11 +32,28 @@
     "components": [
         {
             "name": "weatherFactory",
-            "provides": "dijit.Widget",
+            "provides": [
+                "dijit.Widget",
+                "weather.widget"
+            ],
             "instanceFactory": true,
             "properties": {
                 "widgetRole": "weatherWidget"
             }
+        },
+        {
+            "name": "weatherToggleTool",
+            "impl": "ct/tools/Tool",
+            "provides": "ct.tools.Tool",
+            "propertiesConstructor": true,
+            "properties": {
+                "id": "weatherToggleTool",
+                "title": "WetterTitel"
+            },
+            "references": [{
+                "name": "scopeHandler",
+                "providing": "weather.widget"
+            }]
         }
     ]
 }

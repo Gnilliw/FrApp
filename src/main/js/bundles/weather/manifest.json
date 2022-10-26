@@ -19,12 +19,14 @@
             "widgetRole": "weatherWidget",
             "window": {
                 "title": "WeatherWindow",
+                "dockTool": "weatherToggleTool",
                 "marginBox": {
                     "l": 50,
                     "b": 150,
                     "w": 300,
                     "h": 200
-                }
+                },
+                "closable": false
             }
         }
     ],
@@ -48,7 +50,9 @@
             "propertiesConstructor": true,
             "properties": {
                 "id": "weatherToggleTool",
-                "title": "WetterTitel"
+                "title": "WetterTitel",
+                "toolRole": "toolset",
+                "togglable": true
             },
             "references": [{
                 "name": "scopeHandler",

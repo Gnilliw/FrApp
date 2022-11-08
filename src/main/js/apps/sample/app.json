@@ -1,6 +1,6 @@
 {
     "properties": {
-        "title": "${apptitle}"
+        "title": "condense"
     },
     "load": {
         "bundleLocations": [
@@ -10,319 +10,26 @@
         "allowedBundles": [
             "system",
             "console",
-            "notifier",
-            "splashscreen",
             "templatelayout",
             "template-seasons",
-            "theme-everlasting",
-            "theme-winter",
-            "theme-spring",
-            "theme-summer",
-            "theme-autumn",
-            "map-init",
-            "map-preload-2D",
-            "map-preload-3D",
-            "toolset",
-            "banner",
-            "basemaptoggler",
-            "viewmodeswitcher",
-            "mapnavigation",
-            "popups-default",
-            "scalebar",
-            "locateme",
-            "printing",
-            "share-link",
-            "omnisearch",
-            "locator-store",
-            "toc",
-            "console",
-            "basemapchanger",
-            "weather"
-        ],
-        "require": [
-            "${app}.app"
+            "map-init"
         ],
         "i18n": [
             "bundle"
         ]
     },
     "bundles": {
-        "banner": {
-            "BannerWidget": {
-                "label": "Developer Network",
-                "image": "resource('${app}:/images/logo_conterra.png')",
-                "imageWidth": 200,
-                "imagePosition": "above",
-                "link": "http://developernetwork.conterra.de"
-            }
-        },
+        "banner": {},
         "map-init": {
             "Config": {
                 "basemaps": [
                     {
                         "id": "gray-vector",
                         "basemap": "gray-vector",
-                        "title": "${map.LeApp1.grau1}",
                         "selected": true
-                    },
-                    {
-                        "id": "dark-gray-vector",
-                        "basemap": "dark-gray-vector",
-                        "title": "${map.LeApp1.grau2}"
-                    },
-                    {
-                        "id": "esri_street",
-                        "basemap": "streets",
-                        "title": "Straßen"
-                    },
-                    {
-                        "id": "esri_street2",
-                        "basemap": "streets-vector",
-                        "title": "Straßen Vector"
-                    },
-                    {
-                        "id": "esri_satellite",
-                        "basemap": "satellite",
-                        "title": "Satellit"
-                    },
-                    {
-                        "id": "esri_hybrid",
-                        "basemap": "hybrid",
-                        "title": "Hybrid"
-                    },
-                    {
-                        "id": "esri_topo",
-                        "basemap": "topo",
-                        "title": "Topo"
                     }
                 ],
-                "map": {
-                    "layers": [
-                        {
-                            "title": "${map.LeApp1.title}",
-                            "url": "https://services.arcgis.com/P3ePLMYs2RVChkJx/ArcGIS/rest/services/World_Cities/FeatureServer/",
-                            "type": "AGS_FEATURE",
-                            "visible": true
-                        },
-                        {
-                            "id": "koeln2",
-                            "title": "${map.koeln2.title}",
-                            "description": "${map.koeln2.description}",
-                            "type": "GROUP",
-                            "visible": false,
-                            "layers": [
-                                {
-                                    "title": "${map.koeln2.libraries.title}",
-                                    "url": "https://services.arcgis.com/ObdAEOfl1Z5LP2D0/arcgis/rest/services/Köln/FeatureServer/1",
-                                    "type": "AGS_FEATURE",
-                                    "visible": true,
-                                    "popupTemplate": {
-                                        "title": "{NAME_LANG}",
-                                        "content": [
-                                            {
-                                                "type": "fields",
-                                                "fieldInfos": [
-                                                    {
-                                                        "fieldName": "NAME_LANG",
-                                                        "label": "${common.name}"
-                                                    },
-                                                    {
-                                                        "fieldName": "ADRESSE",
-                                                        "label": "${common.address}"
-                                                    },
-                                                    {
-                                                        "fieldName": "PLZ",
-                                                        "label": "${common.zip}"
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "title": "${map.koeln2.museums.title}",
-                                    "url": "https://services.arcgis.com/ObdAEOfl1Z5LP2D0/arcgis/rest/services/Köln/FeatureServer/2",
-                                    "type": "AGS_FEATURE",
-                                    "visible": true,
-                                    "popupTemplate": {
-                                        "title": "Museum",
-                                        "content": [
-                                            {
-                                                "type": "text",
-                                                "text": "${map.koeln2.museums.text}"
-                                            },
-                                            {
-                                                "type": "fields",
-                                                "fieldInfos": [
-                                                    {
-                                                        "fieldName": "ADRESSE",
-                                                        "label": "${common.address}"
-                                                    },
-                                                    {
-                                                        "fieldName": "STADTBEZIR",
-                                                        "label": "${common.precint}"
-                                                    },
-                                                    {
-                                                        "fieldName": "HYPERLINK",
-                                                        "label": "${common.furtherinfo}"
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                }
-
-                            ]
-                        }
-                    ],
-                    "ground": {
-                        "url": "https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer",
-                        "type": "ELEVATION"
-                    }
-                },
-                "view": {
-                    "viewmode": "2D",
-                    "center": {
-                        "x": 774853,
-                        "y": 6610677,
-                        "spatialReference": 3857
-                    },
-                    "scale": 14000000
-                }
-            }
-        },
-        "themes": {
-            "ThemeModel": {
-                "_selectedTheme": "autumn"
-            },
-            "ThemeSelector": {
-                "componentEnabled": true
-            }
-        },
-        "templates": {
-            "TemplateModel": {
-                "_templates": [
-                    {
-                        "name": "seasons",
-                        "widgets": [
-                            {
-                                "widgetRole": "drawer_button",
-                                "attachTo": "map_topleft",
-                                "props": {
-                                    "layoutIndex": 0
-                                }
-                            },
-                            {
-                                "widgetRole": "sharelink",
-                                "window": {
-                                    "dockable": false,
-                                    "dockingBar": null
-                                }
-                            },
-                            {
-                                "widgetRole": "legend",
-                                "sublayout": [
-                                    "mobile_portrait",
-                                    "mobile_landscape"
-                                ],
-                                "window": {
-                                    "dockable": false,
-                                    "dockingBar": null
-                                }
-                            },
-                            {
-                                "widgetRole": "printing",
-                                "window": {
-                                    "dockable": false,
-                                    "dockingBar": null
-                                }
-                            },
-                            {
-                                "widgetRole": "banner",
-                                "sublayout": [
-                                    "mobile_portrait"
-                                ],
-                                "attachTo": "footer_right"
-                            },
-                            {
-                                "widgetRole": "basemapChangerWidget",
-                                "window": {
-                                    "marginBox": {
-                                        "t": 40,
-                                        "b": 40,
-                                        "r": 0,
-                                        "w": 500
-                                    },
-                                "fixEdgesInVIewPort": {
-                                    "l": false
-                                },
-                                "closable": false,
-                                "collapsable": true,
-                                "collapseAxis": {
-                                    "l": true
-                                }
-                                }
-                            }
-                        ]
-                    }
-                ]
-            }
-        },
-        "toolset": {
-            "ToolsetManager": {
-                "toolsets": [
-                    {
-                        "id": "mapview_tools",
-                        "tools": [
-                            "locateMeTool",
-                            "zoomInTool",
-                            "zoomOutTool",
-                            "compassTool",
-                            "restoreInitialViewTool",
-                            "viewmodeSwitcherTool"
-                        ],
-                        "registerWidget": {
-                            "widgetRole": "mapview_tools"
-                        },
-                        "container": "ignore",
-                        "windowType": "container",
-                        "cssClass": "muted"
-                    },
-                    {
-                        "id": "drawer_left",
-                        "title": "Werkzeuge",
-                        "cssClass": "ct-main-app-menu",
-                        "tools": [
-                            "tocToggleTool",
-                            "printingToggleTool",
-                            "sharelinkTool",
-                            "basemapChangerToggleTool"
-                        ],
-                        "registerWidget": {
-                            "widgetRole": "drawer_button"
-                        },
-                        "container": "ignore",
-                        "windowType": "drawer_left"
-                    },
-                    {
-                        "id": "dropdown",
-                        "cssClass": "ctWDYWBtn ctPrimaryInput",
-                        "title": "${toolsets.whatDoYouWant}",
-                        "tools": [
-                            "tocToggleTool",
-                            "printingToggleTool",
-                            "sharelinkTool",
-                            "basemapChangerToggleTool",
-                            "weatherToggleTool"
-                        ],
-                        "container": "map",
-                        "position": {
-                            "rel_t": 80,
-                            "rel_l": 20
-                        },
-                        "windowType": "dropdown"
-                    }
-                ]
+                "view": {}
             }
         }
     }

@@ -1,0 +1,63 @@
+{
+    "name": "deepfrapp",
+    "version": "1.0.0",
+    "title": "DeepFrAppTitel",
+    "description": "DeepFrAppBeschreibung",
+    "vendor": "con terra GmbH",
+    "productName": "frapp",
+    "dependencies": {
+        "esri": "^4.10.0",
+        "apprt-vue": "^4.7.0",
+        "apprt-vuetify": "^4.7.0"
+    },
+    "layer": "module",
+    "i18n": [
+        "bundle"
+    ],
+    "layout-widgets": [
+        {
+            "widgetRole": "deepfrappWidget",
+            "window": {
+                "title": "DeepFrAppWindow",
+                "dockTool": "deepfrappToggleTool",
+                "marginBox": {
+                    "l": 50,
+                    "b": 150,
+                    "w": 300,
+                    "h": 200
+                },
+                "closable": false
+            }
+        }
+    ],
+    "CSS-Themes-Extension": [],
+    "components": [
+        {
+            "name": "deepfrappFactory",
+            "provides": [
+                "dijit.Widget",
+                "deepfrapp.widget"
+            ],
+            "instanceFactory": true,
+            "properties": {
+                "widgetRole": "deepfrappWidget"
+            }
+        },
+        {
+            "name": "deepfrappToggleTool",
+            "impl": "ct/tools/Tool",
+            "provides": "ct.tools.Tool",
+            "propertiesConstructor": true,
+            "properties": {
+                "id": "deepfrappToggleTool",
+                "title": "DeepFrAppToolTitel",
+                "toolRole": "toolset",
+                "togglable": true
+            },
+            "references": [{
+                "name": "scopeHandler",
+                "providing": "deepfrapp.widget"
+            }]
+        }
+    ]
+}

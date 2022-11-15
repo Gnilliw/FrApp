@@ -52,7 +52,10 @@
                 "id": "deepfrappToggleTool",
                 "title": "DeepFrAppToolTitel",
                 "toolRole": "toolset",
-                "togglable": true
+                "togglable": true,
+                "rules": {
+                    "noGroup": true
+                }
             },
             "references": [{
                 "name": "scopeHandler",

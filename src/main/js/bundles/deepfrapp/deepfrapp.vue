@@ -14,6 +14,12 @@
                 readonly
             />
         </v-layout>
+        <v-btn
+            block
+            @click="openWeather()"
+        >
+            Wetter please!
+        </v-btn>
     </v-container>
 </template>
 
@@ -34,6 +40,9 @@
                 this.longitude = data.longitude;
                 this.lati = this.latitude.toFixed(3);
                 this.longi = this.longitude.toFixed(4);
+            },
+            openWeather(){
+                console.debug("Hi Knopf");
             }
         }
     };

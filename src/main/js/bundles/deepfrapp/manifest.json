@@ -28,6 +28,20 @@
                 },
                 "closable": false
             }
+        },
+        {
+            "widgetRole": "deepfrappweatherWidget",
+            "window": {
+                "title": "DeepFrAppWeatherWindow",
+                "dockTool": "deepfrappweatherToggleTool",
+                "marginBox": {
+                    "l": 50,
+                    "b": 150,
+                    "w": 300,
+                    "h": 200
+                },
+                "closable": false
+            }
         }
     ],
     "CSS-Themes-Extension": [],
@@ -82,6 +96,32 @@
                     "filter": "(id=deepfrappToggleTool)"
                 }
             ]
+        },
+        {
+            "name": "deepfrappweatherFactory",
+            "provides": [
+                "dijit.Widget",
+                "deepfrappweather.widget"
+            ],
+            "instanceFactory": true,
+            "properties": {
+                "widgetRole": "deepfrappweatherWidget"
+            }
+        },
+        {
+            "name": "deepfrappweatherToggleTool",
+            "impl": "ct/tools/Tool",
+            "provides": "ct.tools.Tool",
+            "propertiesConstructor": true,
+            "properties": {
+                "id": "deepfrappweatherToggleTool",
+                "title": "deepfrappweatherToolTitel",
+                "toolRole": "toolset",
+                "togglable": true,
+                "rules": {
+                    "noGroup": true
+                }
+            }
         }
     ]
 }

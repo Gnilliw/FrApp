@@ -41,7 +41,13 @@
             "instanceFactory": true,
             "properties": {
                 "widgetRole": "deepfrappWidget"
-            }
+            },
+            "references": [
+                {
+                    "name": "controller",
+                    "providing": "deep.controller"
+                }
+            ]
         },
         {
             "name": "deepfrappToggleTool",
@@ -56,11 +62,26 @@
                 "rules": {
                     "noGroup": true
                 }
+            }
+        },
+        {
+            "name": "deepfrappController",
+            "propertiesConstructor": true,
+            "provides": "deep.controller",
+            "properties": {
+                "id": "deepfrappController"
             },
-            "references": [{
-                "name": "scopeHandler",
-                "providing": "deepfrapp.widget"
-            }]
+            "references": [
+                {
+                    "name": "_mapWidgetModel",
+                    "providing":"map-widget.MapWidgetModel"
+                },
+                {
+                    "name": "deepfrappToggleTool",
+                    "providing": "ct.tools.Tool",
+                    "filter": "(id=deepfrappToggleTool)"
+                }
+            ]
         }
     ]
 }

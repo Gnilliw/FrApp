@@ -7,7 +7,7 @@ export default class DeepfrappFactory {
     }
     activate() {
         const vm = this.vm = new Vue(deepfrappVue);
-        const deepfrappWidget = this.deepfrappWidget = VueDijit(vm);
+        this.deepfrappWidget = VueDijit(vm);
         this.controller.setVm(vm);
     }
     createInstance(){

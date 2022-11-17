@@ -26,7 +26,7 @@
                     "w": 300,
                     "h": 500
                 },
-                "closable": false
+                "minimizeOnClose": true
             }
         },
         {
@@ -35,7 +35,7 @@
                 "title": "DeepFrAppWeatherWindow",
                 "dockTool": "deepfrappweatherToggleTool",
                 "marginBox": {
-                    "l": 50,
+                    "l": 400,
                     "b": 150,
                     "w": 300,
                     "h": 200
@@ -60,6 +60,10 @@
                 {
                     "name": "controller",
                     "providing": "deep.controller"
+                },
+                {
+                    "name": "weathercontroller",
+                    "providing": "deep.weathercontroller"
                 }
             ]
         },
@@ -94,6 +98,10 @@
                     "name": "deepfrappToggleTool",
                     "providing": "ct.tools.Tool",
                     "filter": "(id=deepfrappToggleTool)"
+                },
+                {
+                    "name": "weathercontroller",
+                    "providing": "deep.weathercontroller"
                 }
             ]
         },
@@ -122,6 +130,21 @@
                     "noGroup": true
                 }
             }
+        },
+        {
+            "name": "deepfrappweatherController",
+            "propertiesConstructor": true,
+            "provides": "deep.weathercontroller",
+            "properties": {
+                "id": "deepfrappweatherController"
+            },
+            "references": [
+                {
+                    "name": "deepfrappweatherToggleTool",
+                    "providing": "ct.tools.Tool",
+                    "filter": "(id=deepfrappweatherToggleTool)"
+                }
+            ]
         }
     ]
 }

@@ -5,7 +5,7 @@
 
 <script>
     export default {
-        name: "weather"
+        name: "deepfrappweather"
     };
 </script>
 

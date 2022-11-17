@@ -6,11 +6,11 @@
         >
             getroffene Koordinate
             <v-text-field
-                v-model="longi"
+                v-model="longitude"
                 readonly
             />
             <v-text-field
-                v-model="lati"
+                v-model="latitude"
                 readonly
             />
         </v-layout>
@@ -28,21 +28,19 @@
         name: "deepfrapp",
         data(){
             return {
-                latitude: undefined,
-                longitude:undefined,
-                lati:undefined,
-                longi:undefined
+                latitude:undefined,
+                longitude:undefined
             };
         },
         methods:{
             setbla(data){
-                this.latitude = data.latitude;
-                this.longitude = data.longitude;
-                this.lati = this.latitude.toFixed(3);
-                this.longi = this.longitude.toFixed(4);
+                const latitude = data.latitude;
+                const longitude = data.longitude;
+                this.latitude = latitude.toFixed(3);
+                this.longitude = longitude.toFixed(4);
             },
             openWeather(){
-                console.debug("Hi Knopf");
+                this.$emit('reallyOpen');
             }
         }
     };

@@ -8,6 +8,7 @@ export default class DeepfrappweatherFactory {
     activate() {
         const vm = this.vm = new Vue(deepfrappweatherVue);
         const deepfrappweatherWidget = this.deepfrappweatherWidget = VueDijit(vm);
+        this.weathercontroller.setVm(vm);
     }
     createInstance(){
         return this.deepfrappweatherWidget;

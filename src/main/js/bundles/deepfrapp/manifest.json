@@ -114,7 +114,13 @@
             "instanceFactory": true,
             "properties": {
                 "widgetRole": "deepfrappweatherWidget"
-            }
+            },
+            "references": [
+                {
+                    "name": "weathercontroller",
+                    "providing": "deep.weathercontroller"
+                }
+            ]
         },
         {
             "name": "deepfrappweatherToggleTool",

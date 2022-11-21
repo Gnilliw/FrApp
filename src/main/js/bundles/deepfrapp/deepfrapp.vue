@@ -18,7 +18,7 @@
             block
             @click="openWeather()"
         >
-            Wetter please!
+            {{buttonText}}
         </v-btn>
     </v-container>
 </template>
@@ -29,7 +29,9 @@
         data(){
             return {
                 latitude:undefined,
-                longitude:undefined
+                longitude:undefined,
+                weatherstatus:false,
+                buttonText:"Wetter please!"
             };
         },
         methods:{
@@ -37,10 +39,21 @@
                 const latitude = data.latitude;
                 const longitude = data.longitude;
                 this.latitude = latitude.toFixed(3);
-                this.longitude = longitude.toFixed(4);
+                this.longitude = longitude.toFixed(3);
             },
             openWeather(){
                 this.$emit('reallyOpen');
+                this.changeButton();
+            },
+            changeButton(){
+                if(this.weatherstatus){
+                    this.buttonText = "Wetter please!";
+                    this.weatherstatus = false;
+                }
+                else{
+                    this.buttonText = "Don't Wetter me!";
+                    this.weatherstatus = true;
+                }
             }
         }
     };

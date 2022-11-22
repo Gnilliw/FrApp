@@ -11,6 +11,8 @@ export default class DeepfrappController{
             this.weathercontroller.setLongitude(event.mapPoint.longitude);
 
             this.weathercontroller.trickController1();
+
+            this.weathercontroller.getLocation();
         });
 
 

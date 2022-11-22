@@ -6,11 +6,7 @@
         >
             getroffene Koordinate
             <v-text-field
-                v-model="longitude"
-                readonly
-            />
-            <v-text-field
-                v-model="latitude"
+                v-model="location"
                 readonly
             />
         </v-layout>
@@ -22,6 +18,7 @@
         name: "deepfrappweather",
         data(){
             return {
+                location: undefined,
                 latitude: undefined,
                 longitude: undefined
             };
@@ -30,6 +27,9 @@
             latiLongiToVm(lati, longi){
                 this.latitude = lati;
                 this.longitude = longi;
+            },
+            updateLocationInVm(location){
+                this.location = location;
             }
         }
     };

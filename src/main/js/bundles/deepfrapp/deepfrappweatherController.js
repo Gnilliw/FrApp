@@ -35,18 +35,11 @@ export default class DeepfrappweatherController{
             + '&pretty=1'
             + '&no_annotations=1';
 
-        const request = new XMLHttpRequest();
-        request.open('GET', request_url, true);
-
-        request.onload = () => {
-            if (request.status === 200){
-                const data = JSON.parse(request.responseText);
-                console.debug(data.results[0].formatted); // print the location
+        fetch(request_url, {method:"GET"})
+            .then(res => res.json())
+            .then(data => {
                 this.location = data.results[0].formatted;
                 this.vm.updateLocationInVm(this.location);
-            }
-        };
-        request.send(); // make the request
+            });
     }
-
 }

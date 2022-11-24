@@ -38,8 +38,30 @@ export default class DeepfrappweatherController{
         fetch(request_url, {method:"GET"})
             .then(res => res.json())
             .then(data => {
-                this.location = data.results[0].formatted;
-                this.vm.updateLocationInVm(this.location);
+                this.location = data.results[0].components.town;
+                console.debug(this.location);
+                if (this.location === undefined){
+                    this.vm.updateLocationInVm("Nichtort");
+                    this.vm.updateWeatherInVm("Also auch kein Wetter")
+                } else {
+                    this.getWeather();
+                    this.vm.updateLocationInVm(this.location);
+                }
+            });
+    }
+
+    getWeather(){
+        const weather_api_url = 'https://api.openweathermap.org/data/2.5/forecast';
+        const weather_request_url = weather_api_url
+            + '?'
+            + 'q=' + encodeURIComponent(this.location)
+            + '&appid=' + "6b904086651c872d0e2c58c1529d2dcb";
+        fetch(weather_request_url, {method:"GET"})
+            .then(res => res.json())
+            .then(data => {
+                this.weatherinfo = data.list[0].main.temp;
+                console.debug(this.weatherinfo);
+                this.vm.updateWeatherInVm(this.weatherinfo);
             });
     }
 }

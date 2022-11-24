@@ -4,9 +4,13 @@
             row
             wrap
         >
-            getroffene Koordinate
+            Wettervorhersage für
             <v-text-field
                 v-model="location"
+                readonly
+            />
+            <v-text-field
+                v-model="weatherinfo"
                 readonly
             />
         </v-layout>
@@ -19,6 +23,7 @@
         data(){
             return {
                 location: undefined,
+                weatherinfo: undefined,
                 latitude: undefined,
                 longitude: undefined
             };
@@ -30,6 +35,9 @@
             },
             updateLocationInVm(location){
                 this.location = location;
+            },
+            updateWeatherInVm(weatherinfo){
+                this.weatherinfo = weatherinfo;
             }
         }
     };

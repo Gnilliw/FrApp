@@ -79,8 +79,15 @@
                 "togglable": true,
                 "rules": {
                     "noGroup": true
+                },
+                "deactivateHandler": "connectClosings"
+            },
+            "references": [
+                {
+                    "name": "handlerScope",
+                    "providing": "deep.weathercontroller"
                 }
-            }
+            ]
         },
         {
             "name": "deepfrappController",

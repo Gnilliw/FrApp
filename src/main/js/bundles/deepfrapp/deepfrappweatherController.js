@@ -42,7 +42,7 @@ export default class DeepfrappweatherController{
                 console.debug(this.location);
                 if (this.location === undefined){
                     this.vm.updateLocationInVm("Nichtort");
-                    this.vm.updateWeatherInVm("Also auch kein Wetter")
+                    this.vm.updateWeatherInVm("Also auch kein Wetter");
                 } else {
                     this.getWeather();
                     this.vm.updateLocationInVm(this.location);
@@ -63,5 +63,9 @@ export default class DeepfrappweatherController{
                 console.debug(this.weatherinfo);
                 this.vm.updateWeatherInVm(this.weatherinfo);
             });
+    }
+
+    connectClosings(){
+        console.debug("Mele Kalikimaka!");
     }
 }

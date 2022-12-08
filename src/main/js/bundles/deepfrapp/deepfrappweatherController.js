@@ -59,9 +59,11 @@ export default class DeepfrappweatherController{
         fetch(weather_request_url, {method:"GET"})
             .then(res => res.json())
             .then(data => {
-                this.weatherinfo = data.list[0].main.temp;
-                console.debug(this.weatherinfo);
-                this.vm.updateWeatherInVm(this.weatherinfo);
+                this.weatherinfoArray = [];
+                for (let i = 0; i < 4; i++){
+                    this.weatherinfoArray.push(data.list[i].main.temp);
+                }
+                this.vm.updateWeatherInVm(this.weatherinfoArray);
             });
     }
 

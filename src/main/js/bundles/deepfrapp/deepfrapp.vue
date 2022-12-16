@@ -34,6 +34,11 @@
                 buttonText:"Wetter please!"
             };
         },
+        /*computed:{
+          formattedLatitude()  {
+              return this.latitude.toFixed(3)
+          }
+        },*/
         methods:{
             setbla(data){
                 const latitude = data.latitude;

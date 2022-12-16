@@ -11,9 +11,9 @@
             />
         </v-layout>
         <span v-if="status">
-            <v-expansion-panel>
+            <v-expansion-panel popout>
                 <v-expansion-panel-content
-                    v-for="(item,i) in weatherinfoArray"
+                    v-for="(item, i) in weatherinfoArray"
                     :key="i"
                 >
                     <template v-slot:header>
@@ -21,12 +21,15 @@
                     </template>
                     <v-card>
                         <v-card-text>
-                            {{ item.tempr }}
+                            Temperatur: {{ item.tempr }} °C
                         </v-card-text>
                     </v-card>
                 </v-expansion-panel-content>
             </v-expansion-panel>
         </span>
+        <div v-else>
+            {{weatherinfoArray}}
+        </div>
     </v-container>
 </template>
 
@@ -37,16 +40,10 @@
             return {
                 location: undefined,
                 weatherinfoArray: undefined,
-                latitude: undefined,
-                longitude: undefined,
                 status: undefined
             };
         },
         methods:{
-            latiLongiToVm(lati, longi){
-                this.latitude = lati;
-                this.longitude = longi;
-            },
             updateLocationInVm(location){
                 this.location = location;
             },

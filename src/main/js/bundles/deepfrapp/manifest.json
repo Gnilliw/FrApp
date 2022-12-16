@@ -35,10 +35,10 @@
                 "title": "DeepFrAppWeatherWindow",
                 "dockTool": "deepfrappweatherToggleTool",
                 "marginBox": {
-                    "l": 400,
-                    "b": 150,
+                    "l": 300,
+                    "b": 120,
                     "w": 300,
-                    "h": 200
+                    "h": 420
                 },
                 "closable": false
             }
@@ -60,10 +60,6 @@
                 {
                     "name": "controller",
                     "providing": "deep.controller"
-                },
-                {
-                    "name": "weathercontroller",
-                    "providing": "deep.weathercontroller"
                 }
             ]
         },

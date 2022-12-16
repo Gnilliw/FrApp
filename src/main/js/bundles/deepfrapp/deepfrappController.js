@@ -6,13 +6,10 @@ export default class DeepfrappController{
             }
 
             this.vm.setbla(this.getData(event));
+            /*this.vm.set("latitude", event.mapPoint.latitude);
+            this.vm.set("longitude", event.mapPoint.longitude);*/
 
-            this.weathercontroller.setLatitude(event.mapPoint.latitude);
-            this.weathercontroller.setLongitude(event.mapPoint.longitude);
-
-            this.weathercontroller.trickController1();
-
-            this.weathercontroller.getLocation();
+            this.weathercontroller.getLocation(event.mapPoint.latitude, event.mapPoint.longitude);
         });
 
 

@@ -44,17 +44,20 @@
             };
         },
         /*computed:{
-          formattedLatitude()  {
-              return this.latitude.toFixed(3)
-          }
+            formattedLatitude()  {
+                return this.latitude.toFixed(1);
+            },
+            formattedLongitude()  {
+                return this.longitude.toFixed(1);
+            }
         },*/
         methods:{
-            setbla(data){
+            /*setbla(data){
                 const latitude = data.latitude;
                 const longitude = data.longitude;
                 this.latitude = latitude.toFixed(3);
                 this.longitude = longitude.toFixed(3);
-            },
+            },*/
             openWeather(){
                 this.$emit('reallyOpen');
                 this.changeButton();

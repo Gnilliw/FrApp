@@ -7,7 +7,7 @@ export default class DeepfrappFactory {
     constructor() {
     }
     activate() {
-        const model = this._deepfrappModel;
+        const model = this.model;
         const vm = this.vm = new Vue(deepfrappVue);
         this.deepfrappWidget = VueDijit(vm);
         Binding.for(vm, model)

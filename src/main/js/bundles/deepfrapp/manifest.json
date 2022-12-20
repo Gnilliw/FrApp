@@ -60,6 +60,10 @@
                 {
                     "name": "controller",
                     "providing": "deep.controller"
+                },
+                {
+                    "name": "model",
+                    "providing": "deep.model"
                 }
             ]
         },
@@ -105,6 +109,10 @@
                 {
                     "name": "weathercontroller",
                     "providing": "deep.weathercontroller"
+                },
+                {
+                    "name": "model",
+                    "providing": "deep.model"
                 }
             ]
         },
@@ -154,6 +162,11 @@
                     "filter": "(id=deepfrappweatherToggleTool)"
                 }
             ]
+        },
+        {
+            "name": "deepfrappModel",
+            "propertiesConstructor": true,
+            "provides": "deep.model"
         }
     ]
 }

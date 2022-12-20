@@ -18,18 +18,27 @@
             block
             @click="openWeather()"
         >
-            {{buttonText}}
+            {{ buttonText }}
         </v-btn>
     </v-container>
 </template>
 
 <script>
+    import Bindable from "apprt-vue/mixins/Bindable";
     export default {
-        name: "deepfrapp",
+        mixins:[Bindable],
+        props: {
+            latitude:{
+                type: Number,
+                default: undefined
+            },
+            longitude:{
+                type: Number,
+                default: undefined
+            }
+        },
         data(){
             return {
-                latitude:undefined,
-                longitude:undefined,
                 weatherstatus:false,
                 buttonText:"Wetter please!"
             };

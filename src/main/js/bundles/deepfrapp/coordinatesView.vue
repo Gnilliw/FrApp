@@ -34,13 +34,9 @@
                 buttonText:"Wetter please!"
             };
         },
-        /*computed:{
-          formattedLatitude()  {
-              return this.latitude.toFixed(3)
-          }
-        },*/
         methods:{
             setbla(data){
+                // TODO: Lokale Variablen entfernen
                 const latitude = data.latitude;
                 const longitude = data.longitude;
                 this.latitude = latitude.toFixed(3);
@@ -50,12 +46,11 @@
                 this.$emit('reallyOpen');
                 this.changeButton();
             },
-            changeButton(){
-                if(this.weatherstatus){
+            changeButton() {
+                if (this.weatherstatus) {
                     this.buttonText = "Wetter please!";
                     this.weatherstatus = false;
-                }
-                else{
+                } else {
                     this.buttonText = "Don't Wetter me!";
                     this.weatherstatus = true;
                 }
@@ -63,7 +58,3 @@
         }
     };
 </script>
-
-<style scoped>
-
-</style>

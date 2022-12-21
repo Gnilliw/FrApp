@@ -315,7 +315,7 @@
                             "sharelinkTool",
                             "basemapChangerToggleTool",
                             "weatherToggleTool",
-                            "deepfrappToggleTool",
+                            "coordinatesToggleTool",
                             "deepfrappweatherToggleTool"
                         ],
                         "container": "map",

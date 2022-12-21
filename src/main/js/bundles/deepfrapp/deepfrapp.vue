@@ -5,14 +5,12 @@
             wrap
         >
             getroffene Koordinate
-            <v-text-field
-                v-model="longitude"
-                readonly
-            />
-            <v-text-field
-                v-model="latitude"
-                readonly
-            />
+            <span>
+                {{ formattedLongitude }}
+            </span>
+            <span>
+                {{ formattedLatitude }}
+            </span>
         </v-layout>
         <v-btn
             block
@@ -43,14 +41,14 @@
                 buttonText:"Wetter please!"
             };
         },
-        /*computed:{
+        computed:{
             formattedLatitude()  {
-                return this.latitude.toFixed(1);
+                return (Math.round(this.latitude * 100)/100);
             },
             formattedLongitude()  {
-                return this.longitude.toFixed(1);
+                return (Math.round(this.longitude * 100)/100);
             }
-        },*/
+        },
         methods:{
             /*setbla(data){
                 const latitude = data.latitude;

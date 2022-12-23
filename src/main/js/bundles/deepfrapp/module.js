@@ -1,4 +1,4 @@
 import ".";
-import "./coordinatesFactory";
-import "./coordinatesController";
+import "./deepfrappFactory";
+import "./deepfrappController";
 import "./deepfrappweatherFactory";

@@ -4,10 +4,16 @@ export default class DeepfrappweatherController{
     }
 
     openWindow(){
-            this.deepfrappweatherToggleTool._setActive(!this.deepfrappweatherToggleTool.active, this);
+        if(!this.deepfrappweatherToggleTool.active)
+        {
+            this.deepfrappweatherToggleTool._setActive(true, this);
         }
+        else
+        {
+            this.deepfrappweatherToggleTool._setActive(false, this);
+        }
+    }
 
-        // TODO: Ausrufezeichen verbannen -> nicht negativ negieren => if (this.location.city)
     howBig() {
         if (!(this.location.city === undefined)) {
             this.ort = this.location.city;
@@ -18,6 +24,8 @@ export default class DeepfrappweatherController{
         } else if (!(this.location.village === undefined)) {
             this.ort = this.location.village;
             return true;
+        } else {
+            return false;
         }
     }
 
@@ -55,7 +63,7 @@ export default class DeepfrappweatherController{
             .then(res => res.json())
             .then(data => {
                 this.weatherinfoArray = [];
-                for (let i = 0; i < data.list.length; i++){
+                for (let i = 0; i < 4; i++){
                     this.weatherinfoArray[i] = {
                         date: data.list[i].dt_txt,
                         tempr: (data.list[i].main.temp - 273.15).toFixed(2)

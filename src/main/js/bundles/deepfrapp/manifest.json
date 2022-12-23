@@ -19,7 +19,7 @@
             "widgetRole": "deepfrappWidget",
             "window": {
                 "title": "DeepFrAppWindow",
-                "dockTool": "coordinatesToggleTool",
+                "dockTool": "deepfrappToggleTool",
                 "marginBox": {
                     "l": 50,
                     "b": 150,
@@ -64,12 +64,12 @@
             ]
         },
         {
-            "name": "coordinatesToggleTool",
+            "name": "deepfrappToggleTool",
             "impl": "ct/tools/Tool",
             "provides": "ct.tools.Tool",
             "propertiesConstructor": true,
             "properties": {
-                "id": "coordinatesToggleTool",
+                "id": "deepfrappToggleTool",
                 "title": "DeepFrAppToolTitel",
                 "toolRole": "toolset",
                 "togglable": true,
@@ -98,9 +98,9 @@
                     "providing":"map-widget.MapWidgetModel"
                 },
                 {
-                    "name": "coordinatesToggleTool",
+                    "name": "deepfrappToggleTool",
                     "providing": "ct.tools.Tool",
-                    "filter": "(id=coordinatesToggleTool)"
+                    "filter": "(id=deepfrappToggleTool)"
                 },
                 {
                     "name": "weathercontroller",

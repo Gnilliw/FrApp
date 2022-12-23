@@ -4,28 +4,19 @@ export default class DeepfrappweatherController{
     }
 
     openWindow(){
-        if(!this.deepfrappweatherToggleTool.active)
-        {
-            this.deepfrappweatherToggleTool._setActive(true, this);
-        }
-        else
-        {
-            this.deepfrappweatherToggleTool._setActive(false, this);
-        }
+        this.deepfrappweatherToggleTool._setActive(!this.deepfrappweatherToggleTool.active, this);
     }
 
-    howBig() {
-        if (!(this.location.city === undefined)) {
+    howMuchIsOrt() {
+        if (this.location.city) {
             this.ort = this.location.city;
             return true;
-        } else if (!(this.location.town === undefined)) {
+        } else if (this.location.town) {
             this.ort = this.location.town;
             return true;
-        } else if (!(this.location.village === undefined)) {
+        } else if (this.location.village) {
             this.ort = this.location.village;
             return true;
-        } else {
-            return false;
         }
     }
 
@@ -38,12 +29,12 @@ export default class DeepfrappweatherController{
             + '&pretty=1'
             + '&no_annotations=1';
 
+        //TODO: Array nicht zum String machen - updateWeatherInVm anpassen
         fetch(request_url, {method:"GET"})
             .then(res => res.json())
             .then(data => {
                 this.location = data.results[0].components;
-                console.debug(this.ort);
-                if (this.howBig()){
+                if (this.howMuchIsOrt()){
                     this.getWeather();
                     this.vm.updateLocationInVm(this.ort);
                 } else {
@@ -63,13 +54,12 @@ export default class DeepfrappweatherController{
             .then(res => res.json())
             .then(data => {
                 this.weatherinfoArray = [];
-                for (let i = 0; i < 4; i++){
+                for (let i = 0; i < data.list.length; i++){
                     this.weatherinfoArray[i] = {
                         date: data.list[i].dt_txt,
                         tempr: (data.list[i].main.temp - 273.15).toFixed(2)
                     };
                 }
-                console.debug(this.weatherinfoArray);
                 this.vm.updateWeatherInVm(true, this.weatherinfoArray);
             });
     }

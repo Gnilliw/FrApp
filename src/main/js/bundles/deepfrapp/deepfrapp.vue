@@ -40,7 +40,7 @@
           }
         },*/
         methods:{
-            setbla(data){
+            setCoordinates(data){
                 const latitude = data.latitude;
                 const longitude = data.longitude;
                 this.latitude = latitude.toFixed(3);

@@ -5,11 +5,12 @@ export default class DeepfrappController{
                 this.deepfrappToggleTool._setActive(true, this);
             }
 
-            this.vm.setbla(this.getData(event));
+            let mapPoint = event.mapPoint;
+            this.vm.setCoordinates(mapPoint);
             /*this.vm.set("latitude", event.mapPoint.latitude);
             this.vm.set("longitude", event.mapPoint.longitude);*/
 
-            this.weathercontroller.getLocation(event.mapPoint.latitude, event.mapPoint.longitude);
+            this.weathercontroller.getLocation(mapPoint.latitude, mapPoint.longitude);
         });
 
 
@@ -20,9 +21,5 @@ export default class DeepfrappController{
         this.vm.$on("reallyOpen", ()=>{
             this.weathercontroller.openWindow();
         });
-    }
-
-    getData(event){
-        return event.mapPoint;
     }
 }

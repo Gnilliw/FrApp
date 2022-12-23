@@ -1,12 +1,10 @@
 import Vue from "apprt-vue/Vue";
 import VueDijit from "apprt-vue/VueDijit";
-import deepfrappVue from "./deepfrapp.vue";
+import coordinatesVue from "./deepfrapp.vue";
 
 export default class DeepfrappFactory {
-    constructor() {
-    }
     activate() {
-        const vm = this.vm = new Vue(deepfrappVue);
+        const vm = new Vue(coordinatesVue);
         this.deepfrappWidget = VueDijit(vm);
         this.controller.setVm(vm);
     }

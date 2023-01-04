@@ -37,7 +37,6 @@
             "toc",
             "console",
             "basemapchanger",
-            "weather",
             "deepfrapp"
         ],
         "require": [
@@ -313,10 +312,7 @@
                             "tocToggleTool",
                             "printingToggleTool",
                             "sharelinkTool",
-                            "basemapChangerToggleTool",
-                            "weatherToggleTool",
-                            "deepfrappToggleTool",
-                            "deepfrappweatherToggleTool"
+                            "basemapChangerToggleTool"
                         ],
                         "container": "map",
                         "position": {

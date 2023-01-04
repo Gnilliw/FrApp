@@ -16,10 +16,10 @@
     ],
     "layout-widgets": [
         {
-            "widgetRole": "deepfrappWidget",
+            "widgetRole": "coordinatesWidget",
             "window": {
                 "title": "DeepFrAppWindow",
-                "dockTool": "deepfrappToggleTool",
+                "dockTool": "coordinatesToggleTool",
                 "marginBox": {
                     "l": 50,
                     "b": 150,
@@ -30,10 +30,10 @@
             }
         },
         {
-            "widgetRole": "deepfrappweatherWidget",
+            "widgetRole": "weatherWidget",
             "window": {
                 "title": "DeepFrAppWeatherWindow",
-                "dockTool": "deepfrappweatherToggleTool",
+                "dockTool": "weatherToggleTool",
                 "marginBox": {
                     "l": 300,
                     "b": 120,
@@ -49,28 +49,27 @@
         {
             "name": "deepfrappFactory",
             "provides": [
-                "dijit.Widget",
-                "deepfrapp.widget"
+                "dijit.Widget"
             ],
             "instanceFactory": true,
             "properties": {
-                "widgetRole": "deepfrappWidget"
+                "widgetRole": "coordinatesWidget"
             },
             "references": [
                 {
-                    "name": "controller",
-                    "providing": "deep.controller"
+                    "name": "coordinatesController",
+                    "providing": "coordinates.controller"
                 }
             ]
         },
         {
-            "name": "deepfrappToggleTool",
+            "name": "coordinatesToggleTool",
             "impl": "ct/tools/Tool",
             "provides": "ct.tools.Tool",
             "propertiesConstructor": true,
             "properties": {
-                "id": "deepfrappToggleTool",
-                "title": "DeepFrAppToolTitel",
+                "id": "coordinatesToggleTool",
+                "title": "CoordinatesToolTitel",
                 "toolRole": "toolset",
                 "togglable": true,
                 "rules": {
@@ -81,16 +80,16 @@
             "references": [
                 {
                     "name": "handlerScope",
-                    "providing": "deep.weathercontroller"
+                    "providing": "weather.weathercontroller"
                 }
             ]
         },
         {
             "name": "deepfrappController",
             "propertiesConstructor": true,
-            "provides": "deep.controller",
+            "provides": "coordinates.controller",
             "properties": {
-                "id": "deepfrappController"
+                "id": "coordinatesController"
             },
             "references": [
                 {
@@ -98,41 +97,40 @@
                     "providing":"map-widget.MapWidgetModel"
                 },
                 {
-                    "name": "deepfrappToggleTool",
+                    "name": "coordinatesToggleTool",
                     "providing": "ct.tools.Tool",
-                    "filter": "(id=deepfrappToggleTool)"
+                    "filter": "(id=coordinatesToggleTool)"
                 },
                 {
                     "name": "weathercontroller",
-                    "providing": "deep.weathercontroller"
+                    "providing": "weather.weathercontroller"
                 }
             ]
         },
         {
             "name": "deepfrappweatherFactory",
             "provides": [
-                "dijit.Widget",
-                "deepfrappweather.widget"
+                "dijit.Widget"
             ],
             "instanceFactory": true,
             "properties": {
-                "widgetRole": "deepfrappweatherWidget"
+                "widgetRole": "weatherWidget"
             },
             "references": [
                 {
                     "name": "weathercontroller",
-                    "providing": "deep.weathercontroller"
+                    "providing": "weather.weathercontroller"
                 }
             ]
         },
         {
-            "name": "deepfrappweatherToggleTool",
+            "name": "weatherToggleTool",
             "impl": "ct/tools/Tool",
             "provides": "ct.tools.Tool",
             "propertiesConstructor": true,
             "properties": {
-                "id": "deepfrappweatherToggleTool",
-                "title": "deepfrappweatherToolTitel",
+                "id": "weatherToggleTool",
+                "title": "weatherToolTitel",
                 "toolRole": "toolset",
                 "togglable": true,
                 "rules": {
@@ -143,15 +141,15 @@
         {
             "name": "deepfrappweatherController",
             "propertiesConstructor": true,
-            "provides": "deep.weathercontroller",
+            "provides": "weather.weathercontroller",
             "properties": {
-                "id": "deepfrappweatherController"
+                "id": "weatherController"
             },
             "references": [
                 {
-                    "name": "deepfrappweatherToggleTool",
+                    "name": "weatherToggleTool",
                     "providing": "ct.tools.Tool",
-                    "filter": "(id=deepfrappweatherToggleTool)"
+                    "filter": "(id=weatherToggleTool)"
                 }
             ]
         }

@@ -1,8 +1,8 @@
 export default class DeepfrappController{
     activate(){
         this._mapWidgetModel.view.on("click", (event)=>{
-            if(!this.deepfrappToggleTool.active){
-                this.deepfrappToggleTool._setActive(true, this);
+            if(!this.coordinatesToggleTool.active){
+                this.coordinatesToggleTool._setActive(true, this);
             }
 
             let mapPoint = event.mapPoint;

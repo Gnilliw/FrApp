@@ -4,7 +4,7 @@ export default class DeepfrappweatherController{
     }
 
     openWindow(){
-        this.deepfrappweatherToggleTool._setActive(!this.deepfrappweatherToggleTool.active, this);
+        this.weatherToggleTool._setActive(!this.weatherToggleTool.active, this);
     }
 
     howMuchIsOrt() {
@@ -65,6 +65,6 @@ export default class DeepfrappweatherController{
     }
 
     connectClosings(){
-        this.deepfrappweatherToggleTool._setActive(false, this);
+        this.weatherToggleTool._setActive(false, this);
     }
 }

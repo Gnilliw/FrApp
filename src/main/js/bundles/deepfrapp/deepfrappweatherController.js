@@ -29,7 +29,6 @@ export default class DeepfrappweatherController{
             + '&pretty=1'
             + '&no_annotations=1';
 
-        //TODO: Array nicht zum String machen - updateWeatherInVm anpassen
         fetch(request_url, {method:"GET"})
             .then(res => res.json())
             .then(data => {
@@ -39,7 +38,7 @@ export default class DeepfrappweatherController{
                     this.vm.updateLocationInVm(this.ort);
                 } else {
                     this.vm.updateLocationInVm("Nichtort");
-                    this.vm.updateWeatherInVm(false, "Also auch kein Wetter");
+                    this.vm.updateWeatherInVm();
                 }
             });
     }
@@ -60,7 +59,7 @@ export default class DeepfrappweatherController{
                         tempr: (data.list[i].main.temp - 273.15).toFixed(2)
                     };
                 }
-                this.vm.updateWeatherInVm(true, this.weatherinfoArray);
+                this.vm.updateWeatherInVm(this.weatherinfoArray);
             });
     }
 

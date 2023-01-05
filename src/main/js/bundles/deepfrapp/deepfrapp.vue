@@ -41,10 +41,8 @@
         },*/
         methods:{
             setCoordinates(data){
-                const latitude = data.latitude;
-                const longitude = data.longitude;
-                this.latitude = latitude.toFixed(3);
-                this.longitude = longitude.toFixed(3);
+                this.latitude = data.latitude.toFixed(3);
+                this.longitude = data.longitude.toFixed(3);
             },
             openWeather(){
                 this.$emit('reallyOpen');

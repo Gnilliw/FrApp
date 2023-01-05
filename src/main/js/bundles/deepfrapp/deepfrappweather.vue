@@ -28,7 +28,7 @@
             </v-expansion-panel>
         </span>
         <div v-else>
-            {{weatherinfoArray}}
+            {{ noWeatherInfo }}
         </div>
     </v-container>
 </template>
@@ -40,16 +40,21 @@
             return {
                 location: undefined,
                 weatherinfoArray: undefined,
-                status: undefined
+                status: false,
+                noWeatherInfo: "Keine Wetterdaten!"
             };
         },
         methods:{
             updateLocationInVm(location){
                 this.location = location;
             },
-            updateWeatherInVm(status, weatherinfo){
-                this.status = status;
-                this.weatherinfoArray = weatherinfo;
+            updateWeatherInVm(weatherinfo){
+                if (weatherinfo) {
+                    this.status = true;
+                    this.weatherinfoArray = weatherinfo;
+                } else {
+                    this.status = false;
+                }
             }
         }
     };

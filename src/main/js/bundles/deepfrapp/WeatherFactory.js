@@ -2,7 +2,7 @@ import Vue from "apprt-vue/Vue";
 import VueDijit from "apprt-vue/VueDijit";
 import weatherVue from "./deepfrappweather.vue";
 
-export default class DeepfrappweatherFactory {
+export default class WeatherFactory {
     activate() {
         const vm = new Vue(weatherVue);
         this.deepfrappweatherWidget = VueDijit(vm);

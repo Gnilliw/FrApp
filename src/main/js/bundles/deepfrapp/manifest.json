@@ -47,7 +47,7 @@
     "CSS-Themes-Extension": [],
     "components": [
         {
-            "name": "deepfrappFactory",
+            "name": "CoordinatesFactory",
             "provides": [
                 "dijit.Widget"
             ],
@@ -85,7 +85,7 @@
             ]
         },
         {
-            "name": "deepfrappController",
+            "name": "CoordinatesController",
             "propertiesConstructor": true,
             "provides": "coordinates.controller",
             "properties": {
@@ -108,7 +108,7 @@
             ]
         },
         {
-            "name": "deepfrappweatherFactory",
+            "name": "WeatherFactory",
             "provides": [
                 "dijit.Widget"
             ],
@@ -139,7 +139,7 @@
             }
         },
         {
-            "name": "deepfrappweatherController",
+            "name": "WeatherController",
             "propertiesConstructor": true,
             "provides": "weather.weathercontroller",
             "properties": {

@@ -1,4 +1,4 @@
-export default class DeepfrappController{
+export default class CoordinatesController {
     activate(){
         this._mapWidgetModel.view.on("click", (event)=>{
             if(!this.coordinatesToggleTool.active){
